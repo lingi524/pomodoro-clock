@@ -6,3 +6,7 @@ body {
   background-color: bisque;
   color: lightblue;
 }
+
+h1 {
+  font-size: 80px;
+}
