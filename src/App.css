@@ -1,12 +1,14 @@
-.App {
+body {
+  background-color: bisque;
+  color: #6cf;
   text-align: center;
 }
 
-body {
-  background-color: bisque;
-  color: lightblue;
-}
-
-h1 {
-  font-size: 80px;
+.Footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto; /* Height of the footer */
+  background: #6cf;
+  color: white;
 }
