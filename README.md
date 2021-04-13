@@ -1,9 +1,9 @@
-**About**
+**About**<br>
 Pomodoro Clock to motivate me and to learn React basics
 
-**Demo**
+**Demo**<br>
 TBA
 
-**Tools used**
+**Tools used**<br>
 React.js
 HTML/CSS
