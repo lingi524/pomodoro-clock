@@ -3,9 +3,12 @@ import './App.css';
 
 
 function Clock() {
+    
+    const timer = 25;
+
     return (
         <div className="Clock">
-            <h2>This is a clock belive it or not</h2>
+            <h2>Its: {timer} minutes left</h2>
         </div>
     )
 }
