@@ -5,7 +5,8 @@ import './App.css';
 function Header() {
     return (
         <div className="App">
-      <h1>Hello React</h1>
+      <h1>Time for a pomodoro study session</h1>
+      <p>Start the timer, and study hard during that time. </p>
     </div>
     )
 }
