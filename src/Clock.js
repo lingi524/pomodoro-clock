@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 
 
-function Footer() {
+function Clock() {
     return (
         <div className="Clock">
             <h2>This is a clock belive it or not</h2>
@@ -10,4 +10,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default Clock
