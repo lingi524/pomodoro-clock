@@ -1,30 +1,25 @@
 import React, {useRef, useState} from "react";
 import './App.css';
 
+function Clock () {
+    let minutes = 25;
+    let seconds = 59;
 
-function Clock() {
-    
-    const [minutes, setMinutes] = useState("00");
-    const [seconds, setSeconds] = useState("00");
-    const [isActive, setIsActive] = useState(false);
-    const [counter, setCounter] = useState(0)
+    timer = setInterval(
+    function looping() {
+        if (seconds>=1) {
+            seconds--;
+        } else if (seconds<1) {
+            minutes--;
+        } else if (minutes<1){
+            alert("Done for now");
+        }
 
-    // let interval = useRef();
-
-    // const startTimer = () => {
-    //     const countdownDate = new Date().getTime();
-    // }
-
-    // interval = getInterval(()=>{
-    //     const now = newDate().getTime();
-    // },1000);
-
-    return (
-        <div className="Clock">
-            <h2>Its: {minutes} minutes and {seconds} seconds left</h2>
-            <button onClick={()=> setIsActive (true)} className="start">Start Timer</button>
-        </div>
-    )
-}
-
+},1000);
+return (
+    <div className="Clock">
+        <h2>Its: {minutes} minutes and {seconds} seconds left</h2>
+        <button className="start">Start Timer</button>
+    </div>
+) }
 export default Clock
