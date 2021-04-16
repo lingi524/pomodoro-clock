@@ -3,12 +3,12 @@ import './App.css';
 
 function Clock () {
     const [isActive, setIsActive] = useState(false);
-    let [minutes, setMinutes] = useState(25);
+    let [minutes, setMinutes] = useState(10);
     let [seconds, setSeconds] = useState(59);
 
     useEffect(()=>{
     if (isActive){
-            if (seconds>1) {
+            if (seconds>=1) {
             var interval = setInterval(() => {
                 setSeconds(seconds-1);
             } ,1000) }
