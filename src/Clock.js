@@ -26,6 +26,7 @@ function Clock () {
             } else if (minutes<1&&seconds===0){
                 alert("Done for now, time for break");
                 isBreakTime = true;
+                isActive = false;
             }
     } return ()=> {clearInterval(interval)}
 },[isActive, seconds, minutes]);
@@ -46,6 +47,8 @@ useEffect(()=>{
 
             } else if (minutes<1&&seconds===0){
                 alert("Break is up"); //Fix so this is not the first thing that pops up when the if statement runs
+                isBreakTime = false;
+                isActive = true;
             }
     } return ()=> {clearInterval(interval)}
 },[isBreakTime, seconds, minutes]);
