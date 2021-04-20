@@ -3,7 +3,7 @@ import './App.css';
 
 function Clock () {
     let [isActive, setIsActive] = useState(false);
-    let [minutes, setMinutes] = useState(1);
+    let [minutes, setMinutes] = useState(25);
     let [seconds, setSeconds] = useState(0);
     let [isBreakTime, setIsBreakTime] = useState(false);
 
@@ -13,32 +13,9 @@ function Clock () {
         setIsActive(false);
       }
 
+
     useEffect(()=>{
     if (isActive){      
-            if (seconds>=1) {
-            var interval = setInterval(() => {
-                setSeconds(seconds-1);
-            } ,100) }
-
-            else if (seconds<1 && minutes>=1) {
-                setMinutes(minutes-1) ;
-                setSeconds(seconds = 59);   
-
-            } else if (minutes<1&&seconds===0){
-                alert("Done for now, breaktime!");
-                isBreakTime = true;
-                isActive = false;
-                setSeconds(seconds = 59);  
-            }
-    } return ()=> {clearInterval(interval)}
-},[isActive, seconds, minutes]);
-
-useEffect(()=>{
-    if (isBreakTime){
-            setMinutes(2);
-            setSeconds(0);
-            isActive=false;
-
             if (seconds>=1) {
             var interval = setInterval(() => {
                 setSeconds(seconds-1);
@@ -46,17 +23,22 @@ useEffect(()=>{
 
             else if (seconds<1 && minutes>=1) {
                 setMinutes(minutes-1) ;
-                setSeconds(seconds = 59);
+                setSeconds(59);   
 
-            } else if (minutes<1 && seconds===0){
-                alert("Break is up. Start focusing");
-                console.log("break 2"); 
-                isBreakTime = false;
-                isActive = true;
-                setSeconds(seconds = 59);  
+            } else if (minutes<1&&seconds===0&&isBreakTime===false){
+                alert("Done for now, breaktime!");
+                setMinutes(5);
+                setSeconds(0);
+                setIsBreakTime(true); 
+
+            } else if (minutes<1&&seconds===0&&isBreakTime===true){
+                alert("Break is done!");
+                setIsBreakTime(false);
+                setMinutes(25);
+                setSeconds(0);  
             }
     } return ()=> {clearInterval(interval)}
-},[isBreakTime, seconds, minutes]);
+},[isActive, isBreakTime, seconds, minutes]);
  
 
 return (
